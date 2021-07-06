@@ -6,7 +6,7 @@ const authordata = require('./src/model/authordata');
 const bookdata = require('./src/model/bookdata');
 const userdata = require('./src/model/userdata');
 var jwt = require('jsonwebtoken');
-
+const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -162,6 +162,6 @@ app.post('/getrole', function (req, res) {
 
 
 });
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log("listening to port number: 3000");
 });
